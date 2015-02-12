@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 A utility library for interfacing with the SRF-08 and SRF-10 ultrasonic
 rangefinders.
@@ -197,7 +198,7 @@ class SRF08(SRFBase):
         super(SRF08, self).__init__(*args, **kwargs)
         self.rxb = bytearray(36)
 
-    def __unicode__(self):
+    def __str__(self):
         return '<SRF08 address {} on {}>'.format(self.bus_addr, self.i2c)
 
     def set_analog_gain(self, gain):
@@ -213,7 +214,7 @@ class SRF10(SRFBase):
     Maximum analog gain of 16.
 
     """
-    def __unicode__(self):
+    def __str__(self):
         return '<SRF10 address {} on {}>'.format(self.bus_addr, self.i2c)
 
     def set_analog_gain(self, gain):
